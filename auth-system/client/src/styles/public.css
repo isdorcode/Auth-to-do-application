@@ -1,0 +1,203 @@
+/* public.css */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+ 
+  
+  .public-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(121, 21, 91, 0.6), rgba(115, 120, 172, 0.6)), 
+                url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--light-color);
+  }
+  
+  .public-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+  }
+  
+  .public-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(to right, var(--accent-color), var(--success-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .public-content {
+    flex: 1;
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .public-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .loading-state, .empty-state {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+    color: black;
+    font-size: 1.2rem;
+  }
+  
+  .public-task-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .public-task-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .public-task-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .task-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: block;
+  }
+  
+  .cta-section {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius);
+  }
+  
+  .cta-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+  }
+  
+  .cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  
+  .cta-button.register {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .cta-button.login {
+    background-color: transparent;
+    color: white;
+    border: 2px solid var(--primary-color);
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
+  }
+  
+  .cta-button.register:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .cta-button.login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .public-header {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+    
+    .nav-links {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .public-task-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .cta-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
